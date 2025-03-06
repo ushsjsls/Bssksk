@@ -40,25 +40,27 @@ scrollToTopBtn.addEventListener('click', function () {
 });
 
 // Дані для графіка собівартості
-const costLabels = ["Смола", "Форма", "Додаткові матеріали", "Енерговитрати", "Реклама"];
+const costLabels = ["Смола", "Форма", "Додаткові матеріали", "Енерговитрати", "Реклама", "Щомісячні витрати"];
 const costData = {
   labels: costLabels,
   datasets: [{
     label: 'Вартість (грн)',
-    data: [66, 30, 30, 10, 60],
+    data: [66, 30, 30, 10, 60, 51800], // Додано щомісячні витрати
     backgroundColor: [
       'rgba(255, 99, 132, 0.6)',
       'rgba(54, 162, 235, 0.6)',
       'rgba(75, 192, 192, 0.6)',
       'rgba(153, 102, 255, 0.6)',
-      'rgba(255, 206, 86, 0.6)'
+      'rgba(255, 206, 86, 0.6)',
+      'rgba(255, 159, 64, 0.6)'
     ],
     borderColor: [
       'rgba(255, 99, 132, 1)',
       'rgba(54, 162, 235, 1)',
       'rgba(75, 192, 192, 1)',
       'rgba(153, 102, 255, 1)',
-      'rgba(255, 206, 86, 1)'
+      'rgba(255, 206, 86, 1)',
+      'rgba(255, 159, 64, 1)'
     ],
     borderWidth: 1
   }]
@@ -96,6 +98,8 @@ const costChart = new Chart(
 
 // Дані для графіка прогнозу продаж
 const salesLabels = Array.from({ length: 12 }, (_, i) => `Місяць ${i + 1}`);
+const monthlyCosts = 51800; // Щомісячні витрати в грн
+
 const salesData = {
   labels: salesLabels,
   datasets: [
@@ -117,7 +121,20 @@ const salesData = {
     },
     {
       label: 'Прибуток (грн)',
-      data: [800 * (500 - 196), 900 * (500 - 196), 1000 * (500 - 196), 1100 * (500 - 196), 1200 * (500 - 196), 1300 * (500 - 196), 1200 * (500 - 196), 1100 * (500 - 196), 1000 * (500 - 196), 900 * (500 - 196), 800 * (500 - 196), 700 * (500 - 196)],
+      data: [
+        800 * (500 - 196) - monthlyCosts,
+        900 * (500 - 196) - monthlyCosts,
+        1000 * (500 - 196) - monthlyCosts,
+        1100 * (500 - 196) - monthlyCosts,
+        1200 * (500 - 196) - monthlyCosts,
+        1300 * (500 - 196) - monthlyCosts,
+        1200 * (500 - 196) - monthlyCosts,
+        1100 * (500 - 196) - monthlyCosts,
+        1000 * (500 - 196) - monthlyCosts,
+        900 * (500 - 196) - monthlyCosts,
+        800 * (500 - 196) - monthlyCosts,
+        700 * (500 - 196) - monthlyCosts
+      ],
       backgroundColor: 'rgba(153, 102, 255, 0.6)',
       borderColor: 'rgba(153, 102, 255, 1)',
       borderWidth: 1,
@@ -184,5 +201,6 @@ const totalProfitBeforeTax = salesData.datasets[2].data.reduce((sum, profit) => 
 const taxRate = 0.195; // 19.5%
 const totalProfitAfterTax = totalProfitBeforeTax * (1 - taxRate);
 
-// Вивід кінцевого прибутку
-document.getElementById('totalProfit').textContent = totalProfitAfterTax.toLocaleString();
+// Вивід прибутку до та після податків
+document.getElementById('profitBeforeTax').textContent = totalProfitBeforeTax.toLocaleString();
+document.getElementById('profitAfterTax').textContent = totalProfitAfterTax.toLocaleString();

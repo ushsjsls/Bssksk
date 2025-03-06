@@ -199,17 +199,33 @@
   </section>
 
   <!-- Финансовый план -->
-  <section id="finance" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Финансовый план</h2>
-      <ul class="list-unstyled text-center">
-        <li>Стартовые затраты: $1500</li>
-        <li>Ежемесячные затраты: $1400</li>
-        <li>Прогноз доходов: $3000/месяц</li>
-        <li>Прибыль: $1600/месяц</li>
-      </ul>
+<section id="finance" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Фінансовий план</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Витрати</h4>
+        <ul class="list-unstyled">
+          <li>Стартові витрати: <strong>1,500$</strong></li>
+          <li>Щомісячні витрати: <strong>1,400$</strong></li>
+          <li>Собівартість виробу: <strong>196 грн</strong></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h4>Доходи</h4>
+        <ul class="list-unstyled">
+          <li>Ціна за одиницю: <strong>500 грн</strong></li>
+          <li>Середні продажі: <strong>1,000 шт/місяць</strong></li>
+          <li>Річний дохід: <strong>6,000,000 грн</strong></li>
+        </ul>
+      </div>
     </div>
-  </section>
+    <div class="text-center mt-4">
+      <h4>Прибуток до податків: <span id="profitBeforeTax"></span> грн</h4>
+      <h4>Прибуток після податків: <span id="profitAfterTax"></span> грн</h4>
+    </div>
+  </div>
+</section>
 
   <!-- Telegram -->
   <section id="telegram" class="py-5 bg-primary text-white">
