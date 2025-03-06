@@ -1,28 +1,21 @@
-// Анимация для кнопки CTA
+// Кнопка "Наверх"
 document.addEventListener('DOMContentLoaded', function () {
-  const ctaButton = document.querySelector('.cta-button');
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-  // Плавное появление кнопки
-  setTimeout(() => {
-    ctaButton.classList.add('visible');
-  }, 500);
+  // Показываем кнопку при прокрутке
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  });
 
-  // Анимация для секций при прокрутке
-  const sections = document.querySelectorAll('.section');
-
-  const animateSections = () => {
-    sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if (sectionTop < windowHeight * 0.8) {
-        section.style.opacity = '1';
-        section.style.transform = 'translateY(0)';
-      }
+  // Прокрутка вверх при клике
+  scrollToTopBtn.addEventListener('click', function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
-  };
-
-  // Запуск анимации при загрузке и прокрутке
-  animateSections();
-  window.addEventListener('scroll', animateSections);
+  });
 });
