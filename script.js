@@ -104,35 +104,6 @@ const salesData = {
       data: [800, 900, 1000, 1100, 1200, 1300, 1200, 1100, 1000, 900, 800, 700],
       backgroundColor: 'rgba(54, 162, 235, 0.6)',
       borderColor: 'rgba(54, 162, 235, 1)',
-      borderWidth: 1
-    },
-    {
-      label: 'Дохід (грн)',
-      data: [800 * 500, 900 * 500, 1000 * 500, 1100 * 500, 1200 * 500, 1300 * 500, 1200 * 500, 1100 * 500, 1000 * 500, 900 * 500, 800 * 500, 700 * 500],
-      backgroundColor: 'rgba(75, 192, 192, 0.6)',
-      borderColor: 'rgba(75, 192, 192, 1)',
-      borderWidth: 1
-    },
-    {
-      label: 'Прибуток (грн)',
-      data: [800 * (500 - 196), 900 * (500 - 196), 1000 * (500 - 196), 1100 * (500 - 196), 1200 * (500 - 196), 1300 * (500 - 196), 1200 * (500 - 196), 1100 * (500 - 196), 1000 * (500 - 196), 900 * (500 - 196), 800 * (500 - 196), 700 * (500 - 196)],
-      backgroundColor: 'rgba(153, 102, 255, 0.6)',
-      borderColor: 'rgba(153, 102, 255, 1)',
-      borderWidth: 1
-    }
-  ]
-};
-
-// Дані для графіка прогнозу продаж
-const salesLabels = Array.from({ length: 12 }, (_, i) => `Місяць ${i + 1}`);
-const salesData = {
-  labels: salesLabels,
-  datasets: [
-    {
-      label: 'Продажі (шт)',
-      data: [800, 900, 1000, 1100, 1200, 1300, 1200, 1100, 1000, 900, 800, 700],
-      backgroundColor: 'rgba(54, 162, 235, 0.6)',
-      borderColor: 'rgba(54, 162, 235, 1)',
       borderWidth: 1,
       yAxisID: 'y-sales' // Використовуємо окрему вісь для продаж
     },
@@ -209,23 +180,3 @@ const salesChart = new Chart(
 // Розрахунок кінцевого прибутку за рік
 const totalProfit = salesData.datasets[2].data.reduce((sum, profit) => sum + profit, 0);
 document.getElementById('totalProfit').textContent = totalProfit.toLocaleString();
-        
-// Функція для виводу даних по графіку
-function displaySalesData() {
-  const salesTableBody = document.getElementById('salesTableBody');
-  salesTableBody.innerHTML = ''; // Очищаємо таблицю перед додаванням нових даних
-
-  salesData.labels.forEach((month, index) => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${month}</td>
-      <td>${salesData.datasets[0].data[index]}</td>
-      <td>${salesData.datasets[1].data[index]}</td>
-      <td>${salesData.datasets[2].data[index]}</td>
-    `;
-    salesTableBody.appendChild(row);
-  });
-}
-
-// Викликаємо функцію для виводу даних
-displaySalesData();
