@@ -123,19 +123,72 @@ const salesData = {
   ]
 };
 
+// Дані для графіка прогнозу продаж
+const salesLabels = Array.from({ length: 12 }, (_, i) => `Місяць ${i + 1}`);
+const salesData = {
+  labels: salesLabels,
+  datasets: [
+    {
+      label: 'Продажі (шт)',
+      data: [800, 900, 1000, 1100, 1200, 1300, 1200, 1100, 1000, 900, 800, 700],
+      backgroundColor: 'rgba(54, 162, 235, 0.6)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      yAxisID: 'y-sales' // Використовуємо окрему вісь для продаж
+    },
+    {
+      label: 'Дохід (грн)',
+      data: [800 * 500, 900 * 500, 1000 * 500, 1100 * 500, 1200 * 500, 1300 * 500, 1200 * 500, 1100 * 500, 1000 * 500, 900 * 500, 800 * 500, 700 * 500],
+      backgroundColor: 'rgba(75, 192, 192, 0.6)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 1,
+      yAxisID: 'y-income' // Використовуємо окрему вісь для доходу
+    },
+    {
+      label: 'Прибуток (грн)',
+      data: [800 * (500 - 196), 900 * (500 - 196), 1000 * (500 - 196), 1100 * (500 - 196), 1200 * (500 - 196), 1300 * (500 - 196), 1200 * (500 - 196), 1100 * (500 - 196), 1000 * (500 - 196), 900 * (500 - 196), 800 * (500 - 196), 700 * (500 - 196)],
+      backgroundColor: 'rgba(153, 102, 255, 0.6)',
+      borderColor: 'rgba(153, 102, 255, 1)',
+      borderWidth: 1,
+      yAxisID: 'y-profit' // Використовуємо окрему вісь для прибутку
+    }
+  ]
+};
+
 // Налаштування графіка прогнозу продаж
 const salesConfig = {
-  type: 'bar', // Змінено на стовпчикову діаграму
+  type: 'bar', // Стовпчикова діаграма
   data: salesData,
   options: {
     responsive: true,
     scales: {
-      y: {
-        beginAtZero: true,
+      'y-sales': {
+        type: 'linear',
+        display: true,
+        position: 'left',
         title: {
           display: true,
-          text: 'Гривні (грн)'
+          text: 'Продажі (шт)'
+        },
+        beginAtZero: true
+      },
+      'y-income': {
+        type: 'linear',
+        display: true,
+        position: 'right',
+        title: {
+          display: true,
+          text: 'Дохід (грн)'
+        },
+        beginAtZero: true,
+        grid: {
+          drawOnChartArea: false // Вимкнення сітки для правої осі
         }
+      },
+      'y-profit': {
+        type: 'linear',
+        display: false, // Приховати вісь для прибутку
+        beginAtZero: true
       }
     },
     plugins: {
