@@ -4,172 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LuxRingBox - Премиальные коробки для колец</title>
-  <!-- Подключение Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Подключение Font Awesome для иконок -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <!-- Подключение Anime.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-    }
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-    }
-    .navbar-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-    }
-    .gallery img {
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      margin: 15px 0;
-    }
-    footer {
-      background: #2c3e50;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    .telegram-section {
-      background: #0088cc;
-      color: #fff;
-      padding: 60px 0;
-      text-align: center;
-    }
-    .telegram-section a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .telegram-section a:hover {
-      text-decoration: underline;
-    }
-    .telegram-icon {
-      font-size: 2rem;
-    }
-    .btn-primary {
-      background-color: #e67e22;
-      border-color: #e67e22;
-      font-size: 1.1rem;
-      padding: 10px 20px;
-    }
-    .btn-primary:hover {
-      background-color: #d35400;
-      border-color: #d35400;
-    }
-    .cta-button {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      opacity: 0; /* Начальное состояние для анимации */
-    }
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
-    .section-text {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      color: #555;
-    }
-    section {
-      opacity: 0; /* Начальное состояние для анимации */
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Кнопка CTA -->
-  <a href="#telegram" class="btn btn-primary cta-button">
+  <a href="#telegram" class="cta-button">
     <i class="fab fa-telegram-plane"></i> Написать нам
   </a>
 
   <!-- Навигация -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar">
     <div class="container">
       <a class="navbar-brand" href="#">LuxRingBox</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">О нас</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#product">Продукт</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#market">Рынок</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#finance">Финансы</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#telegram">Telegram</a>
-          </li>
-        </ul>
-      </div>
+      <ul class="navbar-nav">
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#product">Продукт</a></li>
+        <li><a href="#market">Рынок</a></li>
+        <li><a href="#finance">Финансы</a></li>
+        <li><a href="#telegram">Telegram</a></li>
+      </ul>
     </div>
   </nav>
 
   <!-- Шапка -->
-  <header class="bg-dark text-white text-center py-5">
+  <header class="header">
     <div class="container">
-      <h1 class="display-4">LuxRingBox</h1>
-      <p class="lead">Премиальные коробки для незабываемых моментов</p>
+      <h1>LuxRingBox</h1>
+      <p>Премиальные коробки для незабываемых моментов</p>
     </div>
   </header>
 
   <!-- О нас -->
-  <section id="about" class="py-5">
+  <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title text-center">О нас</h2>
-      <p class="section-text text-center">Мы создаем уникальные коробки для колец, которые подчеркивают ценность момента предложения руки и сердца. Наши коробки — это не просто упаковка, это часть вашей истории. Каждая деталь продумана, чтобы сделать ваш момент особенным.</p>
+      <h2>О нас</h2>
+      <p>Мы создаем уникальные коробки для колец, которые подчеркивают ценность момента предложения руки и сердца. Наши коробки — это не просто упаковка, это часть вашей истории.</p>
     </div>
   </section>
 
   <!-- Продукт -->
-  <section id="product" class="py-5 bg-light">
+  <section id="product" class="section bg-light">
     <div class="container">
-      <h2 class="section-title text-center">Наш продукт</h2>
-      <p class="section-text text-center">Премиальные коробки из кожи, бархата и дерева с возможностью персонализации. Цена: $20-50 за штуку. Идеально подходят для тех, кто ценит качество и стиль.</p>
-      <div class="row">
-        <div class="col-md-4">
-          <img src="0A085F73-622F-4752-9357-AE2E9D969429.jpeg" alt="Коробка 1" class="img-fluid">
-        </div>
-        <div class="col-md-4">
-          <img src="6E45B475-1B89-4FE7-A0C0-14D477563D31.jpeg" alt="Коробка 2" class="img-fluid">
-        </div>
-        <div class="col-md-4">
-          <img src="CEA0DE74-49AB-4995-9F41-61F69F691040.jpeg" alt="Коробка 3" class="img-fluid">
-        </div>
+      <h2>Наш продукт</h2>
+      <p>Премиальные коробки из кожи, бархата и дерева с возможностью персонализации. Цена: $20-50 за штуку.</p>
+      <div class="gallery">
+        <img src="0A085F73-622F-4752-9357-AE2E9D969429.jpeg" alt="Коробка 1">
+        <img src="6E45B475-1B89-4FE7-A0C0-14D477563D31.jpeg">
+        <img src="CEA0DE74-49AB-4995-9F41-61F69F691040.jpeg" alt="Коробка 3">
       </div>
     </div>
   </section>
 
   <!-- Рынок -->
-  <section id="market" class="py-5">
+  <section id="market" class="section">
     <div class="container">
-      <h2 class="section-title text-center">Рынок</h2>
-      <p class="section-text text-center">Мы ориентируемся на молодые пары и ювелирные магазины. Наша цель — захватить 10% рынка в Украине и выйти на международный уровень. Мы уверены, что наши коробки станут неотъемлемой частью вашего предложения.</p>
+      <h2>Рынок</h2>
+      <p>Мы ориентируемся на молодые пары и ювелирные магазины. Наша цель — захватить 10% рынка в Украине и выйти на международный уровень.</p>
     </div>
   </section>
 
   <!-- Финансовый план -->
-  <section id="finance" class="py-5 bg-light">
+  <section id="finance" class="section bg-light">
     <div class="container">
-      <h2 class="section-title text-center">Финансовый план</h2>
-      <ul class="list-unstyled text-center section-text">
+      <h2>Финансовый план</h2>
+      <ul>
         <li>Стартовые затраты: $1500</li>
         <li>Ежемесячные затраты: $1400</li>
         <li>Прогноз доходов: $3000/месяц</li>
@@ -181,9 +82,9 @@
   <!-- Telegram -->
   <section id="telegram" class="telegram-section">
     <div class="container">
-      <h2 class="section-title text-center mb-4">Свяжитесь с нами</h2>
+      <h2>Свяжитесь с нами</h2>
       <a href="https://t.me/luxringbox" target="_blank">
-        <i class="fab fa-telegram-plane telegram-icon"></i>
+        <i class="fab fa-telegram-plane"></i>
         @luxringbox
       </a>
     </div>
@@ -192,11 +93,11 @@
   <!-- Подвал -->
   <footer>
     <div class="container">
-      <p class="mb-0">&copy; 2023 LuxRingBox. Все права защищены.</p>
+      <p>&copy; 2023 LuxRingBox. Все права защищены.</p>
     </div>
   </footer>
 
-  <!-- Подключение Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Подключение JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
