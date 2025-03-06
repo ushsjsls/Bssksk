@@ -177,6 +177,12 @@ const salesChart = new Chart(
   salesConfig
 );
 
-// Розрахунок кінцевого прибутку за рік
-const totalProfit = salesData.datasets[2].data.reduce((sum, profit) => sum + profit, 0);
-document.getElementById('totalProfit').textContent = totalProfit.toLocaleString();
+// Розрахунок кінцевого прибутку за рік з урахуванням податків
+const totalProfitBeforeTax = salesData.datasets[2].data.reduce((sum, profit) => sum + profit, 0);
+
+// Податок на прибуток (18%) + воєнний збір (1.5%)
+const taxRate = 0.195; // 19.5%
+const totalProfitAfterTax = totalProfitBeforeTax * (1 - taxRate);
+
+// Вивід кінцевого прибутку
+document.getElementById('totalProfit').textContent = totalProfitAfterTax.toLocaleString();
