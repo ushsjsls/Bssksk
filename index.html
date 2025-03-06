@@ -36,6 +36,9 @@
             <a class="nav-link" href="#cost">Собівартість</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#forecast">Прогноз</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#market">Рынок</a>
           </li>
           <li class="nav-item">
@@ -72,13 +75,13 @@
       <p class="text-center">Премиальные коробки из кожи, бархата и дерева с возможностью персонализации. Цена: $20-50 за штуку.</p>
       <div class="row">
         <div class="col-md-4 mb-4">
-          <img src="0A085F73-622F-4752-9357-AE2E9D969429.jpeg" alt="Коробка 1" class="img-fluid rounded">
+          <img src="images/box1.jpg" alt="Коробка 1" class="img-fluid rounded">
         </div>
         <div class="col-md-4 mb-4">
-          <img src="6E45B475-1B89-4FE7-A0C0-14D477563D31.jpeg" alt="Коробка 2" class="img-fluid rounded">
+          <img src="images/box2.jpg" alt="Коробка 2" class="img-fluid rounded">
         </div>
         <div class="col-md-4 mb-4">
-          <img src="CEA0DE74-49AB-4995-9F41-61F69F691040.jpeg" alt="Коробка 3" class="img-fluid rounded">
+          <img src="images/box3.jpg" alt="Коробка 3" class="img-fluid rounded">
         </div>
       </div>
     </div>
@@ -92,7 +95,7 @@
       <div class="row">
         <div class="col-md-4 mb-4">
           <div class="card">
-            <img src="comp.jpg" alt="Конкурент 1" class="card-img-top">
+            <img src="images/competitor1.jpg" alt="Конкурент 1" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Конкурент 1</h5>
               <p class="card-text">Описание конкурента 1.</p>
@@ -101,7 +104,7 @@
         </div>
         <div class="col-md-4 mb-4">
           <div class="card">
-            <img src="comp2.jpg" alt="Конкурент 2" class="card-img-top">
+            <img src="images/competitor2.jpg" alt="Конкурент 2" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Конкурент 2</h5>
               <p class="card-text">Описание конкурента 2.</p>
@@ -110,7 +113,7 @@
         </div>
         <div class="col-md-4 mb-4">
           <div class="card">
-            <img src="comp3.jpg" alt="Конкурент 3" class="card-img-top">
+            <img src="images/competitor3.jpg" alt="Конкурент 3" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Конкурент 3</h5>
               <p class="card-text">Описание конкурента 3.</p>
@@ -156,9 +159,14 @@
               <td id="energy-cost">10</td>
             </tr>
             <tr>
+              <td>Витрати на рекламу</td>
+              <td>40-80 грн за клієнта</td>
+              <td id="advertising-cost">60</td>
+            </tr>
+            <tr>
               <td><strong>Загальна собівартість</strong></td>
               <td></td>
-              <td id="total-cost">136</td>
+              <td id="total-cost">196</td>
             </tr>
           </tbody>
         </table>
@@ -169,8 +177,18 @@
     </div>
   </section>
 
+  <!-- Прогноз продаж -->
+  <section id="forecast" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Прогноз продаж та прибутку на 12 місяців</h2>
+      <div class="chart-container">
+        <canvas id="salesChart"></canvas>
+      </div>
+    </div>
+  </section>
+
   <!-- Рынок -->
-  <section id="market" class="py-5">
+  <section id="market" class="py-5 bg-light">
     <div class="container">
       <h2 class="text-center mb-4">Рынок</h2>
       <p class="text-center">Мы ориентируемся на молодые пары и ювелирные магазины. Наша цель — захватить 10% рынка в Украине и выйти на международный уровень.</p>
@@ -178,7 +196,7 @@
   </section>
 
   <!-- Финансовый план -->
-  <section id="finance" class="py-5 bg-light">
+  <section id="finance" class="py-5">
     <div class="container">
       <h2 class="text-center mb-4">Финансовый план</h2>
       <ul class="list-unstyled text-center">
@@ -219,33 +237,35 @@
   <!-- Подключение JavaScript -->
   <script src="script.js"></script>
   <script>
-    // Дані для графіка
-    const labels = ["Смола", "Форма", "Додаткові матеріали", "Енерговитрати"];
-    const data = {
-      labels: labels,
+    // Дані для графіка собівартості
+    const costLabels = ["Смола", "Форма", "Додаткові матеріали", "Енерговитрати", "Реклама"];
+    const costData = {
+      labels: costLabels,
       datasets: [{
         label: 'Вартість (грн)',
-        data: [66, 30, 30, 10],
+        data: [66, 30, 30, 10, 60],
         backgroundColor: [
           'rgba(255, 99, 132, 0.6)',
           'rgba(54, 162, 235, 0.6)',
           'rgba(75, 192, 192, 0.6)',
-          'rgba(153, 102, 255, 0.6)'
+          'rgba(153, 102, 255, 0.6)',
+          'rgba(255, 206, 86, 0.6)'
         ],
         borderColor: [
           'rgba(255, 99, 132, 1)',
           'rgba(54, 162, 235, 1)',
           'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)'
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 206, 86, 1)'
         ],
         borderWidth: 1
       }]
     };
 
-    // Налаштування графіка
-    const config = {
+    // Налаштування графіка собівартості
+    const costConfig = {
       type: 'bar',
-      data: data,
+      data: costData,
       options: {
         scales: {
           y: {
@@ -265,10 +285,68 @@
       }
     };
 
-    // Створення графіка
+    // Створення графіка собівартості
     const costChart = new Chart(
       document.getElementById('costChart'),
-      config
+      costConfig
+    );
+
+    // Дані для графіка прогнозу продаж
+    const salesLabels = Array.from({ length: 12 }, (_, i) => `Місяць ${i + 1}`);
+    const salesData = {
+      labels: salesLabels,
+      datasets: [
+        {
+          label: 'Продажі (шт)',
+          data: [800, 900, 1000, 1100, 1200, 1300, 1200, 1100, 1000, 900, 800, 700],
+          backgroundColor: 'rgba(54, 162, 235, 0.6)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Дохід (грн)',
+          data: [800 * 500, 900 * 500, 1000 * 500, 1100 * 500, 1200 * 500, 1300 * 500, 1200 * 500, 1100 * 500, 1000 * 500, 900 * 500, 800 * 500, 700 * 500],
+          backgroundColor: 'rgba(75, 192, 192, 0.6)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Прибуток (грн)',
+          data: [800 * (500 - 196), 900 * (500 - 196), 1000 * (500 - 196), 1100 * (500 - 196), 1200 * (500 - 196), 1300 * (500 - 196), 1200 * (500 - 196), 1100 * (500 - 196), 1000 * (500 - 196), 900 * (500 - 196), 800 * (500 - 196), 700 * (500 - 196)],
+          backgroundColor: 'rgba(153, 102, 255, 0.6)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          borderWidth: 1
+        }
+      ]
+    };
+
+    // Налаштування графіка прогнозу продаж
+    const salesConfig = {
+      type: 'line',
+      data: salesData,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Гривні (грн)'
+            }
+          }
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Прогноз продаж, доходу та прибутку на 12 місяців'
+          }
+        }
+      }
+    };
+
+    // Створення графіка прогнозу продаж
+    const salesChart = new Chart(
+      document.getElementById('salesChart'),
+      salesConfig
     );
   </script>
 </body>
