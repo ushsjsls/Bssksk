@@ -152,3 +152,23 @@ const salesChart = new Chart(
   document.getElementById('salesChart'),
   salesConfig
 );
+
+// Функція для виводу даних по графіку
+function displaySalesData() {
+  const salesTableBody = document.getElementById('salesTableBody');
+  salesTableBody.innerHTML = ''; // Очищаємо таблицю перед додаванням нових даних
+
+  salesData.labels.forEach((month, index) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${month}</td>
+      <td>${salesData.datasets[0].data[index]}</td>
+      <td>${salesData.datasets[1].data[index]}</td>
+      <td>${salesData.datasets[2].data[index]}</td>
+    `;
+    salesTableBody.appendChild(row);
+  });
+}
+
+// Викликаємо функцію для виводу даних
+displaySalesData();

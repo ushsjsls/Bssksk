@@ -178,14 +178,29 @@
   </section>
 
   <!-- Прогноз продаж -->
-  <section id="forecast" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Прогноз продаж та прибутку на 12 місяців</h2>
-      <div class="chart-container">
-        <canvas id="salesChart"></canvas>
-      </div>
+<section id="forecast" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Прогноз продаж та прибутку на 12 місяців</h2>
+    <div class="chart-container">
+      <canvas id="salesChart"></canvas>
     </div>
-  </section>
+    <div class="table-responsive mt-5">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Місяць</th>
+            <th>Продажі (шт)</th>
+            <th>Дохід (грн)</th>
+            <th>Прибуток (грн)</th>
+          </tr>
+        </thead>
+        <tbody id="salesTableBody">
+          <!-- Дані будуть додані через JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
   <!-- Рынок -->
   <section id="market" class="py-5 bg-light">
