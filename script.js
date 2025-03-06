@@ -153,6 +153,10 @@ const salesChart = new Chart(
   salesConfig
 );
 
+// Розрахунок кінцевого прибутку за рік
+const totalProfit = salesData.datasets[2].data.reduce((sum, profit) => sum + profit, 0);
+document.getElementById('totalProfit').textContent = totalProfit.toLocaleString();
+
 // Функція для виводу даних по графіку
 function displaySalesData() {
   const salesTableBody = document.getElementById('salesTableBody');
