@@ -69,6 +69,7 @@ const costConfig = {
   type: 'bar',
   data: costData,
   options: {
+    responsive: true,
     scales: {
       y: {
         beginAtZero: true,
@@ -127,6 +128,7 @@ const salesConfig = {
   type: 'line',
   data: salesData,
   options: {
+    responsive: true,
     scales: {
       y: {
         beginAtZero: true,
