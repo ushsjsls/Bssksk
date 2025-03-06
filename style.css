@@ -12,8 +12,8 @@ h1, h2, h3 {
 /* Кнопка "Наверх" */
 #scrollToTopBtn {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 20px;
+  right: 20px;
   display: none; /* Скрыта по умолчанию */
   z-index: 1000;
 }
@@ -44,4 +44,11 @@ section {
 section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Контейнер для графиков */
+.chart-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
