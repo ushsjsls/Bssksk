@@ -12,8 +12,8 @@ h1, h2, h3 {
 /* Кнопка "Наверх" */
 #scrollToTopBtn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 15px;
+  right: 15px;
   display: none; /* Скрыта по умолчанию */
   z-index: 1000;
 }
@@ -32,4 +32,16 @@ section {
 /* Стили для Telegram секции */
 .bg-primary {
   background-color: #0088cc !important;
+}
+
+/* Анимации для секций */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
