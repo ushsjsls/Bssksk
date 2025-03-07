@@ -2,16 +2,13 @@
 @media (max-width: 768px) {
     .burger {
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
     }
 
-    .burger span {
-        width: 25px;
-        height: 3px;
-        background-color: #FFFFFF;
-        margin: 4px 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+    .burger i {
+        font-size: 1.5rem;
     }
 
     .nav ul {
@@ -23,6 +20,7 @@
         right: 0;
         width: 100%;
         text-align: center;
+        padding: 20px 0;
     }
 
     .nav ul.active {

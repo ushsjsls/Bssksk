@@ -3,40 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuxRingBox — Элитные кольца и упаковка</title>
+    <title>LuxRingBox — Роскошная упаковка для колец</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="responsive.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "LuxRingBox",
-      "url": "https://luxringbox.com",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+7 (999) 123-45-67",
-        "contactType": "customer service",
-        "email": "info@luxringbox.com"
-      }
-    }
-    </script>
 </head>
 <body>
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="burger" id="burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <i class="fas fa-bars"></i> <!-- Иконка бургера -->
                 </div>
                 <ul id="nav-menu">
-                    <li><a href="#about">О нас</a></li>
-                    <li><a href="#products">Продукция</a></li>
-                    <li><a href="#portfolio">Портфолио</a></li>
-                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> О нас</a></li>
+                    <li><a href="#products"><i class="fas fa-gift"></i> Упаковка</a></li>
+                    <li><a href="#portfolio"><i class="fas fa-images"></i> Портфолио</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Контакты</a></li>
                 </ul>
             </nav>
         </div>
@@ -44,36 +29,36 @@
 
     <section class="hero">
         <div class="container">
-            <h1 data-aos="fade-up">Элитные кольца и упаковка от LuxRingBox</h1>
-            <p data-aos="fade-up" data-aos-delay="200">Роскошь в каждой детали.</p>
-            <a href="#contact" class="btn" data-aos="fade-up" data-aos-delay="400">Связаться с нами</a>
+            <h1 data-aos="fade-up">Роскошная упаковка для колец</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Элегантность и стиль в каждой детали.</p>
+            <a href="#contact" class="btn" data-aos="fade-up" data-aos-delay="400"><i class="fas fa-phone-alt"></i> Связаться с нами</a>
         </div>
     </section>
 
     <section id="about" class="about" data-aos="fade-up">
         <div class="container">
-            <h2>О нас</h2>
-            <p>LuxRingBox — это бренд, который создает уникальные кольца и упаковку для самых важных моментов в вашей жизни.</p>
+            <h2><i class="fas fa-info-circle"></i> О нас</h2>
+            <p>LuxRingBox — это бренд, который создает уникальную упаковку для колец, подчеркивая их красоту и значимость.</p>
         </div>
     </section>
 
     <section id="products" class="products" data-aos="fade-up">
         <div class="container">
-            <h2>Наша продукция</h2>
+            <h2><i class="fas fa-gift"></i> Наша упаковка</h2>
             <div class="product-grid">
                 <div class="product-item">
                     <picture>
                         <source srcset="1.WEBP" type="image/webp">
-                        <img src="0A085F73-622F-4752-9357-AE2E9D969429.jpeg" alt="Кольцо 1" loading="lazy">
+                        <img src="assets/images/box1.jpg" alt="Упаковка 1" loading="lazy">
                     </picture>
-                    <h3>Кольцо "Элегантность"</h3>
+                    <h3>Классическая упаковка</h3>
                 </div>
                 <div class="product-item">
                     <picture>
                         <source srcset="2.WEBP" type="image/webp">
-                        <img src="6E45B475-1B89-4FE7-A0C0-14D477563D31.jpeg" alt="Кольцо 2" loading="lazy">
+                        <img src="assets/images/box2.jpg" alt="Упаковка 2" loading="lazy">
                     </picture>
-                    <h3>Кольцо "Роскошь"</h3>
+                    <h3>Премиальная упаковка</h3>
                 </div>
             </div>
         </div>
@@ -81,7 +66,7 @@
 
     <section id="portfolio" class="portfolio" data-aos="fade-up">
         <div class="container">
-            <h2>Портфолио</h2>
+            <h2><i class="fas fa-images"></i> Портфолио</h2>
             <div class="portfolio-grid">
                 <picture>
                     <source srcset="assets/images/portfolio1.webp" type="image/webp">
@@ -97,9 +82,9 @@
 
     <section id="contact" class="contact" data-aos="fade-up">
         <div class="container">
-            <h2>Контакты</h2>
+            <h2><i class="fas fa-envelope"></i> Контакты</h2>
             <p>Email: info@luxringbox.com</p>
-            <p>Телефон: +8 (093) 123-45-67</p>
+            <p>Телефон: +7 (999) 123-45-67</p>
             <div class="map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.372951144775!2d37.615310715931104!3d55.75199998055146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a738fa419%3A0x7c347d506f52311a!2sRed%20Square!5e0!3m2!1sen!2sru!4v1633011234567!5m2!1sen!2sru" 
                         width="100%" 
@@ -114,11 +99,11 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 LuxRingBox. Все права защищены.</p>
+            <p>&copy; 2023 LuxRingBox. Все права защищены.</p>
             <div class="social-links">
-                <a href="https://instagram.com/luxringbox" target="_blank">Instagram</a>
-                <a href="https://wa.me/79991234567" target="_blank">WhatsApp</a>
-                <a href="https://t.me/luxringbox" target="_blank">Telegram</a>
+                <a href="https://instagram.com/luxringbox" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/79991234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/luxringbox" target="_blank"><i class="fab fa-telegram-plane"></i></a>
             </div>
         </div>
     </footer>

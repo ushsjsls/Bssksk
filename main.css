@@ -12,6 +12,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px; /* Выравнивание полей */
 }
 
 /* Заголовки */
@@ -19,21 +20,19 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     color: #FFFFFF; /* Белый для заголовков */
+    margin: 0 0 20px 0; /* Выравнивание отступов */
 }
 
 h1 {
     font-size: 3.5rem;
-    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 2.5rem;
-    margin-bottom: 15px;
 }
 
 h3 {
     font-size: 1.8rem;
-    margin-bottom: 10px;
 }
 
 /* Шапка */
@@ -57,10 +56,18 @@ h3 {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Отступ между иконкой и текстом */
 }
 
 .nav a:hover {
     color: #FF6B6B; /* Розовый при наведении */
+}
+
+/* Иконки */
+.fas, .fab {
+    font-size: 1.2rem;
 }
 
 /* Герой-секция */
@@ -91,6 +98,9 @@ h3 {
     border-radius: 30px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Отступ между иконкой и текстом */
 }
 
 .hero .btn:hover {
@@ -161,13 +171,15 @@ h3 {
 
 .social-links {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .social-links a {
     color: #4ECDC4; /* Голубые ссылки */
     text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
+    font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
