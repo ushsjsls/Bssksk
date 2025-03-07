@@ -50,12 +50,12 @@ document.getElementById('costForm').addEventListener('submit', function (e) {
   const totalCost = resinCost + moldCost + additionalCost + energyCost + advertisingCost;
 
   // Обновляем таблицу
-  document.getElementById('resin-cost').textContent = resinCost.toFixed(2);
-  document.getElementById('mold-cost').textContent = moldCost.toFixed(2);
-  document.getElementById('additional-cost').textContent = additionalCost.toFixed(2);
-  document.getElementById('energy-cost').textContent = energyCost.toFixed(2);
-  document.getElementById('advertising-cost').textContent = advertisingCost.toFixed(2);
-  document.getElementById('total-cost').textContent = totalCost.toFixed(2);
+  document.getElementById('resin-cost').textContent = resinCost.toLocaleString();
+  document.getElementById('mold-cost').textContent = moldCost.toLocaleString();
+  document.getElementById('additional-cost').textContent = additionalCost.toLocaleString();
+  document.getElementById('energy-cost').textContent = energyCost.toLocaleString();
+  document.getElementById('advertising-cost').textContent = advertisingCost.toLocaleString();
+  document.getElementById('total-cost').textContent = totalCost.toLocaleString();
 
   // Обновляем график себестоимости
   costChart.data.datasets[0].data = [resinCost, moldCost, additionalCost, energyCost, advertisingCost];
@@ -87,10 +87,10 @@ document.getElementById('calculationForm').addEventListener('submit', function (
   const minPrice = (monthlyExpenses / salesVolume) + unitCost;
 
   // Вывод результатов
-  document.getElementById('profitPerUnit').textContent = profitPerUnit.toFixed(2);
-  document.getElementById('breakEvenPoint').textContent = breakEvenPoint;
-  document.getElementById('profitResult').textContent = profitAfterTax.toFixed(2);
-  document.getElementById('minPriceResult').textContent = minPrice.toFixed(2);
+  document.getElementById('profitPerUnit').textContent = profitPerUnit.toLocaleString();
+  document.getElementById('breakEvenPoint').textContent = breakEvenPoint.toLocaleString();
+  document.getElementById('profitResult').textContent = profitAfterTax.toLocaleString();
+  document.getElementById('minPriceResult').textContent = minPrice.toLocaleString();
 });
 
 // Дані для графіка собівартості
