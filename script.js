@@ -29,10 +29,17 @@ function drawCostChart() {
         fontSize: 14,
       },
     },
+    chartArea: {
+      width: '80%',
+      height: '70%',
+    },
   };
 
   const chart = new google.visualization.PieChart(document.getElementById('costChart'));
   chart.draw(data, options);
+
+  // Перерисовка графика при изменении размера окна
+  window.addEventListener('resize', () => chart.draw(data, options));
 }
 
 // Функция для рисования графика прогноза продаж
@@ -74,10 +81,17 @@ function drawSalesChart() {
         fontSize: 14,
       },
     },
+    chartArea: {
+      width: '80%',
+      height: '70%',
+    },
   };
 
   const chart = new google.visualization.LineChart(document.getElementById('salesChart'));
   chart.draw(data, options);
+
+  // Перерисовка графика при изменении размера окна
+  window.addEventListener('resize', () => chart.draw(data, options));
 }
 
 // Анимация для секций при прокрутке
