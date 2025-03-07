@@ -9,7 +9,7 @@
     .burger span {
         width: 25px;
         height: 3px;
-        background-color: #F7FFF7;
+        background-color: #FFFFFF;
         margin: 4px 0;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
