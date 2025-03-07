@@ -21,7 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
 window.addEventListener('scroll', function () {
-  if (window.scrollY > 300) {
+  const footer = document.querySelector('footer');
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (footerTop < windowHeight) {
     scrollToTopBtn.style.display = 'block';
   } else {
     scrollToTopBtn.style.display = 'none';
