@@ -1,3 +1,85 @@
+// Загрузка Google Charts
+google.charts.load('current', { packages: ['corechart'] });
+google.charts.setOnLoadCallback(() => {
+  drawCostChart();
+  drawSalesChart();
+});
+
+// Функция для рисования графика себестоимости
+function drawCostChart() {
+  const data = google.visualization.arrayToDataTable([
+    ['Параметр', 'Вартість (грн)'],
+    ['Смола', 88],
+    ['Форма', 40],
+    ['Додаткові матеріали', 50],
+    ['Енерговитрати', 20],
+    ['Реклама', 60],
+  ]);
+
+  const options = {
+    title: 'Розподіл собівартості виробу',
+    is3D: true,
+    backgroundColor: 'transparent',
+    titleTextStyle: {
+      fontSize: 18,
+      bold: true,
+    },
+    legend: {
+      textStyle: {
+        fontSize: 14,
+      },
+    },
+  };
+
+  const chart = new google.visualization.PieChart(document.getElementById('costChart'));
+  chart.draw(data, options);
+}
+
+// Функция для рисования графика прогноза продаж
+function drawSalesChart() {
+  const data = google.visualization.arrayToDataTable([
+    ['Місяць', 'Продажі (шт)', 'Дохід (грн)', 'Прибуток (грн)'],
+    ['Місяць 1', 100, 80000, 54200],
+    ['Місяць 2', 120, 96000, 65040],
+    ['Місяць 3', 150, 120000, 81300],
+    ['Місяць 4', 180, 144000, 97560],
+    ['Місяць 5', 200, 160000, 108400],
+    ['Місяць 6', 220, 176000, 119240],
+    ['Місяць 7', 210, 168000, 113820],
+    ['Місяць 8', 190, 152000, 102980],
+    ['Місяць 9', 170, 136000, 92140],
+    ['Місяць 10', 150, 120000, 81300],
+    ['Місяць 11', 130, 104000, 70460],
+    ['Місяць 12', 110, 88000, 59620],
+  ]);
+
+  const options = {
+    title: 'Прогноз продаж, доходу та прибутку на 12 місяців',
+    curveType: 'function',
+    legend: { position: 'bottom' },
+    backgroundColor: 'transparent',
+    titleTextStyle: {
+      fontSize: 18,
+      bold: true,
+    },
+    hAxis: {
+      title: 'Місяць',
+      titleTextStyle: {
+        fontSize: 14,
+      },
+    },
+    vAxis: {
+      title: 'Гривні',
+      titleTextStyle: {
+        fontSize: 14,
+      },
+    },
+  };
+
+  const chart = new google.visualization.LineChart(document.getElementById('salesChart'));
+  chart.draw(data, options);
+}
+
 // Анимация для секций при прокрутке
 document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('section');
@@ -35,7 +117,7 @@ window.addEventListener('scroll', function () {
 scrollToTopBtn.addEventListener('click', function () {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: 'smooth',
   });
 });
 
@@ -62,8 +144,7 @@ document.getElementById('costForm').addEventListener('submit', function (e) {
   document.getElementById('total-cost').textContent = totalCost.toLocaleString();
 
   // Обновляем график себестоимости
-  costChart.data.datasets[0].data = [resinCost, moldCost, additionalCost, energyCost, advertisingCost];
-  costChart.update();
+  drawCostChart();
 });
 
 // Обработка формы калькулятора
@@ -96,166 +177,3 @@ document.getElementById('calculationForm').addEventListener('submit', function (
   document.getElementById('profitResult').textContent = profitAfterTax.toLocaleString();
   document.getElementById('minPriceResult').textContent = minPrice.toLocaleString();
 });
-
-// Дані для графіка собівартості
-const costLabels = ["Смола", "Форма", "Додаткові матеріали", "Енерговитрати", "Реклама"];
-const costData = {
-  labels: costLabels,
-  datasets: [{
-    label: 'Вартість (грн)',
-    data: [88, 40, 50, 20, 60],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.6)',
-      'rgba(54, 162, 235, 0.6)',
-      'rgba(75, 192, 192, 0.6)',
-      'rgba(153, 102, 255, 0.6)',
-      'rgba(255, 206, 86, 0.6)'
-    ],
-    borderColor: [
-      'rgba(255, 99, 132, 1)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 206, 86, 1)'
-    ],
-    borderWidth: 1
-  }]
-};
-
-const costConfig = {
-  type: 'bar',
-  data: costData,
-  options: {
-    responsive: true,
-    scales: {
-      y: {
-        beginAtZero: true,
-        title: {
-          display: true,
-          text: 'Вартість (грн)'
-        }
-      }
-    },
-    plugins: {
-      title: {
-        display: true,
-        text: 'Розподіл собівартості виробу'
-      }
-    }
-  }
-};
-
-const costChart = new Chart(
-  document.getElementById('costChart'),
-  costConfig
-);
-
-// Дані для графіка прогнозу продаж
-const salesLabels = Array.from({ length: 12 }, (_, i) => `Місяць ${i + 1}`);
-const monthlyExpenses = 51800; // Щомісячні витрати
-const unitCost = 258; // Собівартість одиниці
-const unitPrice = 800; // Ціна за одиницю
-const profitPerUnit = unitPrice - unitCost; // Прибуток з одиниці
-
-const salesData = {
-  labels: salesLabels,
-  datasets: [
-    {
-      label: 'Продажі (шт)',
-      data: [100, 120, 150, 180, 200, 220, 210, 190, 170, 150, 130, 110],
-      backgroundColor: 'rgba(54, 162, 235, 0.6)',
-      borderColor: 'rgba(54, 162, 235, 1)',
-      borderWidth: 1,
-      yAxisID: 'y-sales'
-    },
-    {
-      label: 'Дохід (грн)',
-      data: [100 * unitPrice, 120 * unitPrice, 150 * unitPrice, 180 * unitPrice, 200 * unitPrice, 220 * unitPrice, 210 * unitPrice, 190 * unitPrice, 170 * unitPrice, 150 * unitPrice, 130 * unitPrice, 110 * unitPrice],
-      backgroundColor: 'rgba(75, 192, 192, 0.6)',
-      borderColor: 'rgba(75, 192, 192, 1)',
-      borderWidth: 1,
-      yAxisID: 'y-income'
-    },
-    {
-      label: 'Прибуток (грн)',
-      data: [
-        100 * profitPerUnit - monthlyExpenses,
-        120 * profitPerUnit - monthlyExpenses,
-        150 * profitPerUnit - monthlyExpenses,
-        180 * profitPerUnit - monthlyExpenses,
-        200 * profitPerUnit - monthlyExpenses,
-        220 * profitPerUnit - monthlyExpenses,
-        210 * profitPerUnit - monthlyExpenses,
-        190 * profitPerUnit - monthlyExpenses,
-        170 * profitPerUnit - monthlyExpenses,
-        150 * profitPerUnit - monthlyExpenses,
-        130 * profitPerUnit - monthlyExpenses,
-        110 * profitPerUnit - monthlyExpenses
-      ],
-      backgroundColor: 'rgba(153, 102, 255, 0.6)',
-      borderColor: 'rgba(153, 102, 255, 1)',
-      borderWidth: 1,
-      yAxisID: 'y-profit'
-    }
-  ]
-};
-
-const salesConfig = {
-  type: 'bar',
-  data: salesData,
-  options: {
-    responsive: true,
-    scales: {
-      'y-sales': {
-        type: 'linear',
-        display: true,
-        position: 'left',
-        title: {
-          display: true,
-          text: 'Продажі (шт)'
-        },
-        beginAtZero: true
-      },
-      'y-income': {
-        type: 'linear',
-        display: true,
-        position: 'right',
-        title: {
-          display: true,
-          text: 'Дохід (грн)'
-        },
-        beginAtZero: true,
-        grid: {
-          drawOnChartArea: false
-        }
-      },
-      'y-profit': {
-        type: 'linear',
-        display: false,
-        beginAtZero: true
-      }
-    },
-    plugins: {
-      title: {
-        display: true,
-        text: 'Прогноз продаж, доходу та прибутку на 12 місяців'
-      }
-    }
-  }
-};
-
-const salesChart = new Chart(
-  document.getElementById('salesChart'),
-  salesConfig
-);
-
-// Розрахунок кінцевого прибутку за рік
-const totalProfitBeforeTax = salesData.datasets[2].data.reduce((sum, profit) => sum + profit, 0);
-
-// Податок на прибуток (18%) + воєнний збір (1.5%)
-const taxRate = 0.195; // 19.5%
-const totalProfitAfterTax = totalProfitBeforeTax * (1 - taxRate);
-
-// Вивід прибутку до та після податків
-document.getElementById('profitBeforeTax').textContent = totalProfitBeforeTax.toLocaleString();
-document.getElementById('profitAfterTax').textContent = totalProfitAfterTax.toLocaleString();
