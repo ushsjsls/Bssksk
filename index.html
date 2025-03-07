@@ -24,7 +24,6 @@
           <li class="nav-item"><a class="nav-link" href="#competitors">Конкуренты</a></li>
           <li class="nav-item"><a class="nav-link" href="#cost">Собівартість</a></li>
           <li class="nav-item"><a class="nav-link" href="#forecast">Прогноз</a></li>
-          <li class="nav-item"><a class="nav-link" href="#market">Рынок</a></li>
           <li class="nav-item"><a class="nav-link" href="#finance">Финансы</a></li>
           <li class="nav-item"><a class="nav-link" href="#calculator">Калькулятор</a></li>
           <li class="nav-item"><a class="nav-link" href="#telegram">Telegram</a></li>
@@ -103,7 +102,30 @@
   <section id="cost" class="py-5 bg-light">
     <div class="container">
       <h2 class="text-center mb-4">Розрахунок собівартості виробу</h2>
-      <div class="table-responsive">
+      <form id="costForm">
+        <div class="mb-3">
+          <label for="resinCost" class="form-label">Вартість смоли (грн):</label>
+          <input type="number" class="form-control" id="resinCost" value="88" required>
+        </div>
+        <div class="mb-3">
+          <label for="moldCost" class="form-label">Вартість форми (грн):</label>
+          <input type="number" class="form-control" id="moldCost" value="40" required>
+        </div>
+        <div class="mb-3">
+          <label for="additionalCost" class="form-label">Додаткові матеріали (грн):</label>
+          <input type="number" class="form-control" id="additionalCost" value="50" required>
+        </div>
+        <div class="mb-3">
+          <label for="energyCost" class="form-label">Енерговитрати (грн):</label>
+          <input type="number" class="form-control" id="energyCost" value="20" required>
+        </div>
+        <div class="mb-3">
+          <label for="advertisingCost" class="form-label">Витрати на рекламу (грн):</label>
+          <input type="number" class="form-control" id="advertisingCost" value="60" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Розрахувати</button>
+      </form>
+      <div class="table-responsive mt-4">
         <table class="table table-bordered">
           <thead>
             <tr>
