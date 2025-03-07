@@ -1,8 +1,32 @@
 /* Адаптивность */
 @media (max-width: 768px) {
-    .nav ul {
+    .burger {
+        display: flex;
         flex-direction: column;
-        align-items: center;
+        cursor: pointer;
+    }
+
+    .burger span {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav ul.active {
+        display: flex;
     }
 
     .hero h1 {

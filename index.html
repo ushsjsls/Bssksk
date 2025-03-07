@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="responsive.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LuxRingBox",
+      "url": "https://luxringbox.com",
+      "logo": "https://luxringbox.com/assets/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7 (999) 123-45-67",
+        "contactType": "customer service",
+        "email": "info@luxringbox.com"
+      }
+    }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -16,7 +31,12 @@
                 <img src="assets/images/logo.png" alt="LuxRingBox Logo">
             </div>
             <nav class="nav">
-                <ul>
+                <div class="burger" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-menu">
                     <li><a href="#about">О нас</a></li>
                     <li><a href="#products">Продукция</a></li>
                     <li><a href="#portfolio">Портфолио</a></li>
@@ -46,11 +66,17 @@
             <h2>Наша продукция</h2>
             <div class="product-grid">
                 <div class="product-item">
-                    <img src="assets/images/ring1.jpg" alt="Кольцо 1" loading="lazy">
+                    <picture>
+                        <source srcset="assets/images/ring1.webp" type="image/webp">
+                        <img src="assets/images/ring1.jpg" alt="Кольцо 1" loading="lazy">
+                    </picture>
                     <h3>Кольцо "Элегантность"</h3>
                 </div>
                 <div class="product-item">
-                    <img src="assets/images/ring2.jpg" alt="Кольцо 2" loading="lazy">
+                    <picture>
+                        <source srcset="assets/images/ring2.webp" type="image/webp">
+                        <img src="assets/images/ring2.jpg" alt="Кольцо 2" loading="lazy">
+                    </picture>
                     <h3>Кольцо "Роскошь"</h3>
                 </div>
             </div>
@@ -61,8 +87,14 @@
         <div class="container">
             <h2>Портфолио</h2>
             <div class="portfolio-grid">
-                <img src="assets/images/portfolio1.jpg" alt="Портфолио 1" loading="lazy">
-                <img src="assets/images/portfolio2.jpg" alt="Портфолио 2" loading="lazy">
+                <picture>
+                    <source srcset="assets/images/portfolio1.webp" type="image/webp">
+                    <img src="assets/images/portfolio1.jpg" alt="Портфолио 1" loading="lazy">
+                </picture>
+                <picture>
+                    <source srcset="assets/images/portfolio2.webp" type="image/webp">
+                    <img src="assets/images/portfolio2.jpg" alt="Портфолио 2" loading="lazy">
+                </picture>
             </div>
         </div>
     </section>
@@ -71,7 +103,7 @@
         <div class="container">
             <h2>Контакты</h2>
             <p>Email: info@luxringbox.com</p>
-            <p>Телефон: +7 (999) 123-45-67</p>
+            <p>Телефон: +8 (099) 123-45-67</p>
             <div class="map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.372951144775!2d37.615310715931104!3d55.75199998055146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a738fa419%3A0x7c347d506f52311a!2sRed%20Square!5e0!3m2!1sen!2sru!4v1633011234567!5m2!1sen!2sru" 
                         width="100%" 
