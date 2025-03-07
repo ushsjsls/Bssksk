@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LuxRingBox - Калькулятор прибутку</title>
+  <title>LuxRingBox - Премиальные коробки для колец</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -19,17 +19,169 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#input-form">Калькулятор</a></li>
-          <li class="nav-item"><a class="nav-link" href="#results">Результати</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
+          <li class="nav-item"><a class="nav-link" href="#product">Продукт</a></li>
+          <li class="nav-item"><a class="nav-link" href="#competitors">Конкуренты</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cost">Собівартість</a></li>
+          <li class="nav-item"><a class="nav-link" href="#forecast">Прогноз</a></li>
+          <li class="nav-item"><a class="nav-link" href="#market">Рынок</a></li>
+          <li class="nav-item"><a class="nav-link" href="#finance">Финансы</a></li>
+          <li class="nav-item"><a class="nav-link" href="#calculator">Калькулятор</a></li>
+          <li class="nav-item"><a class="nav-link" href="#telegram">Telegram</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Форма для ввода данных -->
-  <section id="input-form" class="py-5 bg-light">
+  <!-- Шапка -->
+  <header class="bg-dark text-white text-center py-5 mt-5">
     <div class="container">
-      <h2 class="text-center mb-4">Введіть дані для розрахунків</h2>
+      <h1 class="display-4">LuxRingBox</h1>
+      <p class="lead">Премиальные коробки для незабываемых моментов</p>
+    </div>
+  </header>
+
+  <!-- О нас -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">О нас</h2>
+      <p class="text-center">Мы создаем уникальные коробки для колец, которые подчеркивают ценность момента предложения руки и сердца. Наши коробки — это не просто упаковка, это часть вашей истории.</p>
+    </div>
+  </section>
+
+  <!-- Продукт -->
+  <section id="product" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Наш продукт</h2>
+      <p class="text-center">Премиальные коробки из кожи, бархата и дерева с возможностью персонализации. Цена: 800 грн за штуку.</p>
+      <div class="row">
+        <div class="col-md-4 mb-4"><img src="images/box1.jpg" alt="Коробка 1" class="img-fluid rounded"></div>
+        <div class="col-md-4 mb-4"><img src="images/box2.jpg" alt="Коробка 2" class="img-fluid rounded"></div>
+        <div class="col-md-4 mb-4"><img src="images/box3.jpg" alt="Коробка 3" class="img-fluid rounded"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Конкуренты -->
+  <section id="competitors" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Конкуренты</h2>
+      <p class="text-center">Мы анализируем рынок и предлагаем лучшее качество по доступной цене. Вот наши основные конкуренты:</p>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/competitor1.jpg" alt="Конкурент 1" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Конкурент 1</h5>
+              <p class="card-text">Описание конкурента 1.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/competitor2.jpg" alt="Конкурент 2" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Конкурент 2</h5>
+              <p class="card-text">Описание конкурента 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/competitor3.jpg" alt="Конкурент 3" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Конкурент 3</h5>
+              <p class="card-text">Описание конкурента 3.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Собівартість -->
+  <section id="cost" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Розрахунок собівартості виробу</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>Значення</th>
+              <th>Вартість (грн)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Вага смоли (220 г)</td><td>0.22 кг</td><td id="resin-cost">88</td></tr>
+            <tr><td>Форма (амортизація)</td><td>10 використань</td><td id="mold-cost">40</td></tr>
+            <tr><td>Додаткові матеріали</td><td>Фарби, розділювачі</td><td id="additional-cost">50</td></tr>
+            <tr><td>Енерговитрати</td><td>Електрика</td><td id="energy-cost">20</td></tr>
+            <tr><td>Витрати на рекламу</td><td>40-80 грн за клієнта</td><td id="advertising-cost">60</td></tr>
+            <tr><td><strong>Загальна собівартість</strong></td><td></td><td id="total-cost">258</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="chart-container mt-5">
+        <canvas id="costChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Прогноз продаж -->
+  <section id="forecast" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Прогноз продаж та прибутку на 12 місяців</h2>
+      <div class="chart-container">
+        <canvas id="salesChart"></canvas>
+      </div>
+      <div class="text-center mt-4">
+        <h4>Кінцевий прибуток за рік: <span id="totalProfit"></span> грн</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Рынок -->
+  <section id="market" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Рынок</h2>
+      <p class="text-center">Мы ориентируемся на молодые пары и ювелирные магазины. Наша цель — захватить 10% рынка в Украине и выйти на международный уровень.</p>
+    </div>
+  </section>
+
+  <!-- Финансовый план -->
+  <section id="finance" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Фінансовий план</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Витрати</h4>
+          <ul class="list-unstyled">
+            <li>Стартові витрати: <strong>1,500$</strong></li>
+            <li>Щомісячні витрати: <strong>51,800 грн</strong></li>
+            <li>Собівартість виробу: <strong>258 грн</strong></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h4>Доходи</h4>
+          <ul class="list-unstyled">
+            <li>Ціна за одиницю: <strong>800 грн</strong></li>
+            <li>Середні продажі: <strong>1,000 шт/місяць</strong></li>
+            <li>Річний дохід: <strong>9,600,000 грн</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <h4>Прибуток до податків: <span id="profitBeforeTax"></span> грн</h4>
+        <h4>Прибуток після податків: <span id="profitAfterTax"></span> грн</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Калькулятор -->
+  <section id="calculator" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Калькулятор прибутку</h2>
       <form id="calculationForm">
         <div class="mb-3">
           <label for="unitCost" class="form-label">Собівартість однієї коробки (грн):</label>
@@ -53,14 +205,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Розрахувати</button>
       </form>
-    </div>
-  </section>
-
-  <!-- Блок для вывода результатов -->
-  <section id="results" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Результати розрахунків</h2>
-      <div class="text-center">
+      <div class="text-center mt-4">
         <h4>Прибуток з однієї коробки: <span id="profitPerUnit"></span> грн</h4>
         <h4>Точка беззбитковості: <span id="breakEvenPoint"></span> шт/місяць</h4>
         <h4>Прибуток при введених продажах: <span id="profitResult"></span> грн/місяць</h4>
@@ -68,6 +213,23 @@
       </div>
     </div>
   </section>
+
+  <!-- Telegram -->
+  <section id="telegram" class="py-5 bg-primary text-white">
+    <div class="container">
+      <h2 class="text-center mb-4">Свяжитесь с нами</h2>
+      <div class="text-center">
+        <a href="https://t.me/ваш_телеграм_аккаунт" target="_blank" class="btn btn-light btn-lg">
+          <i class="fab fa-telegram-plane"></i> Наш Telegram: @ваш_телеграм_аккаунт
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Кнопка "Наверх" -->
+  <button id="scrollToTopBtn" class="btn btn-primary btn-lg">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <!-- Подвал -->
   <footer class="bg-dark text-white py-4">
