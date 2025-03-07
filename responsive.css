@@ -9,7 +9,7 @@
     .burger span {
         width: 25px;
         height: 3px;
-        background-color: #fff;
+        background-color: #F7FFF7;
         margin: 4px 0;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
@@ -17,7 +17,7 @@
     .nav ul {
         display: none;
         flex-direction: column;
-        background-color: #1a1a1a;
+        background-color: #1A535C;
         position: absolute;
         top: 70px;
         right: 0;
@@ -30,7 +30,11 @@
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
     }
 
     .product-grid, .portfolio-grid {
