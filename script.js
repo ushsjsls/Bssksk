@@ -35,9 +35,36 @@ scrollToTopBtn.addEventListener('click', function () {
   });
 });
 
+// Обработка формы для расчета себестоимости
+document.getElementById('costForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Получаем введенные данные
+  const resinCost = parseFloat(document.getElementById('resinCost').value);
+  const moldCost = parseFloat(document.getElementById('moldCost').value);
+  const additionalCost = parseFloat(document.getElementById('additionalCost').value);
+  const energyCost = parseFloat(document.getElementById('energyCost').value);
+  const advertisingCost = parseFloat(document.getElementById('advertisingCost').value);
+
+  // Общая себестоимость
+  const totalCost = resinCost + moldCost + additionalCost + energyCost + advertisingCost;
+
+  // Обновляем таблицу
+  document.getElementById('resin-cost').textContent = resinCost.toFixed(2);
+  document.getElementById('mold-cost').textContent = moldCost.toFixed(2);
+  document.getElementById('additional-cost').textContent = additionalCost.toFixed(2);
+  document.getElementById('energy-cost').textContent = energyCost.toFixed(2);
+  document.getElementById('advertising-cost').textContent = advertisingCost.toFixed(2);
+  document.getElementById('total-cost').textContent = totalCost.toFixed(2);
+
+  // Обновляем график себестоимости
+  costChart.data.datasets[0].data = [resinCost, moldCost, additionalCost, energyCost, advertisingCost];
+  costChart.update();
+});
+
 // Обработка формы калькулятора
 document.getElementById('calculationForm').addEventListener('submit', function (e) {
-  e.preventDefault(); // Отменяем стандартное поведение формы
+  e.preventDefault();
 
   // Получаем введенные данные
   const unitCost = parseFloat(document.getElementById('unitCost').value);
