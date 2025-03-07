@@ -1,4 +1,3 @@
-/* Основные стили */
 body {
   font-family: 'Roboto', sans-serif;
   color: #333;
@@ -9,32 +8,27 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-/* Кнопка "Наверх" */
 #scrollToTopBtn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: none; /* Скрыта по умолчанию */
+  display: none;
   z-index: 1000;
 }
 
-/* Адаптивные изображения */
 .img-fluid {
   max-width: 100%;
   height: auto;
 }
 
-/* Дополнительные отступы для секций */
 section {
   padding: 60px 0;
 }
 
-/* Стили для Telegram секции */
 .bg-primary {
   background-color: #0088cc !important;
 }
 
-/* Анимации для секций */
 section {
   opacity: 0;
   transform: translateY(50px);
@@ -46,7 +40,6 @@ section.visible {
   transform: translateY(0);
 }
 
-/* Контейнер для графиков */
 .chart-container {
   width: 100%;
   max-width: 800px;
