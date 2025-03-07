@@ -1,0 +1,19 @@
+      <div class="mb-3">
+        <label for="taxRate" class="form-label">Податкова ставка (%):</label>
+        <input type="number" class="form-control" id="taxRate" value="19.5" required>
+      </div>
+      <div class="mb-3">
+        <label for="salesVolume" class="form-label">Кількість продажів (шт/місяць):</label>
+        <input type="number" class="form-control" id="salesVolume" value="500" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Розрахувати</button>
+    </form>
+    <div class="text-center mt-4">
+      <h4>Прибуток з однієї коробки: <span id="profitPerUnit" class="text-primary">542 грн</span></h4>
+      <h4>Точка беззбитковості: <span id="breakEvenPoint" class="text-primary">96 шт/місяць</span></h4>
+      <h4>Прибуток при введених продажах: <span id="profitResult" class="text-primary">271,000 грн/місяць</span></h4>
+      <h4>Мінімальна ціна для прибутку: <span id="minPriceResult" class="text-primary">310 грн</span></h4>
+    </div>
+    <div id="calculatorChart" class="chart-container mt-5"></div>
+  </div>
+</section>

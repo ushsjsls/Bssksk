@@ -1,0 +1,48 @@
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold">Розрахунок собівартості виробу</h2>
+    <form id="costForm" class="bg-white p-4 rounded shadow-sm">
+      <div class="mb-3">
+        <label for="resinCost" class="form-label">Вартість смоли (грн):</label>
+        <input type="number" class="form-control" id="resinCost" value="88" required>
+      </div>
+      <div class="mb-3">
+        <label for="moldCost" class="form-label">Вартість форми (грн):</label>
+        <input type="number" class="form-control" id="moldCost" value="40" required>
+      </div>
+      <div class="mb-3">
+        <label for="additionalCost" class="form-label">Додаткові матеріали (грн):</label>
+        <input type="number" class="form-control" id="additionalCost" value="50" required>
+      </div>
+      <div class="mb-3">
+        <label for="energyCost" class="form-label">Енерговитрати (грн):</label>
+        <input type="number" class="form-control" id="energyCost" value="20" required>
+      </div>
+      <div class="mb-3">
+        <label for="advertisingCost" class="form-label">Витрати на рекламу (грн):</label>
+        <input type="number" class="form-control" id="advertisingCost" value="60" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Розрахувати</button>
+    </form>
+    <div class="table-responsive mt-4">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th>Значення</th>
+            <th>Вартість (грн)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Вага смоли (220 г)</td><td>0.22 кг</td><td id="resin-cost">88</td></tr>
+          <tr><td>Форма (амортизація)</td><td>10 використань</td><td id="mold-cost">40</td></tr>
+          <tr><td>Додаткові матеріали</td><td>Фарби, розділювачі</td><td id="additional-cost">50</td></tr>
+          <tr><td>Енерговитрати</td><td>Електрика</td><td id="energy-cost">20</td></tr>
+          <tr><td>Витрати на рекламу</td><td>40-80 грн за клієнта</td><td id="advertising-cost">60</td></tr>
+          <tr><td><strong>Загальна собівартість</strong></td><td></td><td id="total-cost">258</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="costChart" class="chart-container mt-5"></div>
+  </div>
+</section>

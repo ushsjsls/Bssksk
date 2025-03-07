@@ -1,3 +1,72 @@
+/* Основные стили */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #202124;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #202124;
+}
+
+/* Выделение ключевых моментов */
+.highlight {
+  color: #1a73e8;
+  font-weight: 600;
+}
+
+/* Навигация */
+.navbar {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  color: #202124 !important;
+}
+
+.nav-link {
+  color: #202124 !important;
+}
+
+.nav-link:hover {
+  color: #1a73e8 !important;
+}
+
+/* Шапка */
+header {
+  background-color: #ffffff;
+  color: #202124;
+  padding: 100px 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 1.25rem;
+}
+
+/* Секции */
+section {
+  padding: 80px 0;
+  background-color: #ffffff;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
 section p {
   font-size: 1.1rem;
   text-align: center;
@@ -28,12 +97,12 @@ section p {
 .card-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: #202124;
 }
 
 .card-text {
   font-size: 1rem;
-  color: #666;
+  color: #5f6368;
 }
 
 /* Таблицы */
@@ -45,7 +114,7 @@ section p {
 }
 
 .table th {
-  background-color: #2c3e50;
+  background-color: #1a73e8;
   color: #ffffff;
   font-weight: 600;
 }
@@ -78,7 +147,7 @@ form {
 
 .form-label {
   font-weight: 600;
-  color: #2c3e50;
+  color: #202124;
 }
 
 .form-control {
@@ -89,12 +158,12 @@ form {
 }
 
 .form-control:focus {
-  border-color: #0088cc;
-  box-shadow: 0 0 5px rgba(0, 136, 204, 0.5);
+  border-color: #1a73e8;
+  box-shadow: 0 0 5px rgba(26, 115, 232, 0.5);
 }
 
 .btn-primary {
-  background-color: #0088cc;
+  background-color: #1a73e8;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
@@ -104,7 +173,7 @@ form {
 }
 
 .btn-primary:hover {
-  background-color: #006699;
+  background-color: #1557b0;
 }
 
 /* Кнопка "Наверх" */
@@ -114,7 +183,7 @@ form {
   right: 20px;
   display: none;
   z-index: 1000;
-  background-color: #0088cc;
+  background-color: #1a73e8;
   border: none;
   padding: 8px 12px;
   border-radius: 50%;
@@ -123,12 +192,12 @@ form {
 }
 
 #scrollToTopBtn:hover {
-  background-color: #006699;
+  background-color: #1557b0;
 }
 
 /* Подвал */
 footer {
-  background-color: #2c3e50;
+  background-color: #202124;
   color: #ffffff;
   padding: 20px 0;
   margin-top: 40px;

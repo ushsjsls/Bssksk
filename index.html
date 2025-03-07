@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LuxRingBox - Премиальные коробки для колец</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
   <!-- Навигация -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="#">LuxRingBox</a>
+      <a class="navbar-brand fw-bold" href="#">LuxRingBox</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,213 +33,22 @@
   </nav>
 
   <!-- Шапка -->
-  <header class="bg-dark text-white text-center py-5 mt-5">
+  <header class="bg-white text-dark text-center py-5 mt-5">
     <div class="container">
-      <h1 class="display-4">LuxRingBox</h1>
+      <h1 class="display-4 fw-bold">LuxRingBox</h1>
       <p class="lead">Премиальные коробки для незабываемых моментов</p>
     </div>
   </header>
 
-  <!-- О нас -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">О нас</h2>
-      <p class="text-center">Мы создаем уникальные коробки для колец, которые подчеркивают ценность момента предложения руки и сердца. Наши коробки — это не просто упаковка, это часть вашей истории.</p>
-    </div>
-  </section>
-
-  <!-- Продукт -->
-  <section id="product" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Наш продукт</h2>
-      <p class="text-center">Премиальные коробки из кожи, бархата и дерева с возможностью персонализации. Цена: <span class="highlight">800 грн за штуку</span>.</p>
-      <div class="row">
-        <div class="col-md-4 mb-4"><img src="images/box1.jpg" alt="Коробка 1" class="img-fluid rounded"></div>
-        <div class="col-md-4 mb-4"><img src="images/box2.jpg" alt="Коробка 2" class="img-fluid rounded"></div>
-        <div class="col-md-4 mb-4"><img src="images/box3.jpg" alt="Коробка 3" class="img-fluid rounded"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Конкуренты -->
-  <section id="competitors" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Конкуренты</h2>
-      <p class="text-center">Мы анализируем рынок и предлагаем лучшее качество по доступной цене. Вот наши основные конкуренты:</p>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="images/competitor1.jpg" alt="Конкурент 1" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Конкурент 1</h5>
-              <p class="card-text">Описание конкурента 1.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="images/competitor2.jpg" alt="Конкурент 2" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Конкурент 2</h5>
-              <p class="card-text">Описание конкурента 2.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="images/competitor3.jpg" alt="Конкурент 3" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Конкурент 3</h5>
-              <p class="card-text">Описание конкурента 3.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Собівартість -->
-  <section id="cost" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Розрахунок собівартості виробу</h2>
-      <form id="costForm">
-        <div class="mb-3">
-          <label for="resinCost" class="form-label">Вартість смоли (грн):</label>
-          <input type="number" class="form-control" id="resinCost" value="88" required>
-        </div>
-        <div class="mb-3">
-          <label for="moldCost" class="form-label">Вартість форми (грн):</label>
-          <input type="number" class="form-control" id="moldCost" value="40" required>
-        </div>
-        <div class="mb-3">
-          <label for="additionalCost" class="form-label">Додаткові матеріали (грн):</label>
-          <input type="number" class="form-control" id="additionalCost" value="50" required>
-        </div>
-        <div class="mb-3">
-          <label for="energyCost" class="form-label">Енерговитрати (грн):</label>
-          <input type="number" class="form-control" id="energyCost" value="20" required>
-        </div>
-        <div class="mb-3">
-          <label for="advertisingCost" class="form-label">Витрати на рекламу (грн):</label>
-          <input type="number" class="form-control" id="advertisingCost" value="60" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Розрахувати</button>
-      </form>
-      <div class="table-responsive mt-4">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Параметр</th>
-              <th>Значення</th>
-              <th>Вартість (грн)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Вага смоли (220 г)</td><td>0.22 кг</td><td id="resin-cost">88</td></tr>
-            <tr><td>Форма (амортизація)</td><td>10 використань</td><td id="mold-cost">40</td></tr>
-            <tr><td>Додаткові матеріали</td><td>Фарби, розділювачі</td><td id="additional-cost">50</td></tr>
-            <tr><td>Енерговитрати</td><td>Електрика</td><td id="energy-cost">20</td></tr>
-            <tr><td>Витрати на рекламу</td><td>40-80 грн за клієнта</td><td id="advertising-cost">60</td></tr>
-            <tr><td><strong>Загальна собівартість</strong></td><td></td><td id="total-cost">258</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="costChart" class="chart-container mt-5"></div>
-    </div>
-  </section>
-
-  <!-- Прогноз продаж -->
-  <section id="forecast" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Прогноз продаж та прибутку на 12 місяців</h2>
-      <div id="salesChart" class="chart-container"></div>
-      <div class="text-center mt-4">
-        <h4>Кінцевий прибуток за рік: <span id="totalProfit" class="highlight">542,000 грн</span></h4>
-      </div>
-    </div>
-  </section>
-
-  <!-- Финансовый план -->
-  <section id="finance" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Фінансовий план</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <h4>Витрати</h4>
-          <ul class="list-unstyled">
-            <li>Стартові витрати: <strong>1,500$</strong></li>
-            <li>Щомісячні витрати: <strong>51,800 грн</strong></li>
-            <li>Собівартість виробу: <strong>258 грн</strong></li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <h4>Доходи</h4>
-          <ul class="list-unstyled">
-            <li>Ціна за одиницю: <strong>800 грн</strong></li>
-            <li>Середні продажі: <strong>1,000 шт/місяць</strong></li>
-            <li>Річний дохід: <strong>9,600,000 грн</strong></li>
-          </ul>
-        </div>
-      </div>
-      <div class="text-center mt-4">
-        <h4>Прибуток до податків: <span id="profitBeforeTax" class="highlight">542,000 грн</span></h4>
-        <h4>Прибуток після податків: <span id="profitAfterTax" class="highlight">436,000 грн</span></h4>
-      </div>
-    </div>
-  </section>
-
-  <!-- Калькулятор -->
-  <section id="calculator" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Калькулятор прибутку</h2>
-      <form id="calculationForm">
-        <div class="mb-3">
-          <label for="unitCost" class="form-label">Собівартість однієї коробки (грн):</label>
-          <input type="number" class="form-control" id="unitCost" value="258" required>
-        </div>
-        <div class="mb-3">
-          <label for="unitPrice" class="form-label">Ціна продажу однієї коробки (грн):</label>
-          <input type="number" class="form-control" id="unitPrice" value="800" required>
-        </div>
-        <div class="mb-3">
-          <label for="monthlyExpenses" class="form-label">Щомісячні витрати (грн):</label>
-          <input type="number" class="form-control" id="monthlyExpenses" value="51800" required>
-        </div>
-        <div class="mb-3">
-          <label for="taxRate" class="form-label">Податкова ставка (%):</label>
-          <input type="number" class="form-control" id="taxRate" value="19.5" required>
-        </div>
-        <div class="mb-3">
-          <label for="salesVolume" class="form-label">Кількість продажів (шт/місяць):</label>
-          <input type="number" class="form-control" id="salesVolume" value="500" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Розрахувати</button>
-      </form>
-      <div class="text-center mt-4">
-        <h4>Прибуток з однієї коробки: <span id="profitPerUnit" class="highlight">542 грн</span></h4>
-        <h4>Точка беззбитковості: <span id="breakEvenPoint" class="highlight">96 шт/місяць</span></h4>
-        <h4>Прибуток при введених продажах: <span id="profitResult" class="highlight">271,000 грн/місяць</span></h4>
-        <h4>Мінімальна ціна для прибутку: <span id="minPriceResult" class="highlight">310 грн</span></h4>
-      </div>
-    </div>
-  </section>
-
-  <!-- Telegram -->
-  <section id="telegram" class="py-5 bg-primary text-white">
-    <div class="container">
-      <h2 class="text-center mb-4">Свяжитесь с нами</h2>
-      <div class="text-center">
-        <a href="https://t.me/ваш_телеграм_аккаунт" target="_blank" class="btn btn-light btn-lg">
-          <i class="fab fa-telegram-plane"></i> Наш Telegram: @ваш_телеграм_аккаунт
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Кнопка "Наверх" -->
-  <button id="scrollToTopBtn" class="btn btn-primary btn-lg">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+  <!-- Подключение секций -->
+  <iframe src="about.html" id="about" class="section-frame"></iframe>
+  <iframe src="product.html" id="product" class="section-frame"></iframe>
+  <iframe src="competitors.html" id="competitors" class="section-frame"></iframe>
+  <iframe src="cost.html" id="cost" class="section-frame"></iframe>
+  <iframe src="forecast.html" id="forecast" class="section-frame"></iframe>
+  <iframe src="finance.html" id="finance" class="section-frame"></iframe>
+  <iframe src="calculator.html" id="calculator" class="section-frame"></iframe>
+  <iframe src="telegram.html" id="telegram" class="section-frame"></iframe>
 
   <!-- Подвал -->
   <footer class="bg-dark text-white py-4">

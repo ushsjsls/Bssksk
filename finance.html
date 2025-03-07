@@ -1,0 +1,35 @@
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold">Фінансовий план</h2>
+    <p class="text-center text-muted mb-4">
+      Фінансовий план включає витрати, доходи та прибуток. 
+      <span class="text-primary">Витрати</span> включають стартові інвестиції, щомісячні витрати та собівартість виробу. 
+      <span class="text-primary">Доходи</span> розраховуються на основі ціни за коробку та середніх продажів.
+    </p>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <h4 class="fw-bold">Витрати</h4>
+        <ul class="list-unstyled">
+          <li>Стартові витрати: <strong>1,500$</strong></li>
+          <li>Щомісячні витрати: <strong>51,800 грн</strong></li>
+          <li>Собівартість виробу: <strong>258 грн</strong></li>
+        </ul>
+        <div id="expensesChart" class="chart-container"></div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h4 class="fw-bold">Доходи</h4>
+        <ul class="list-unstyled">
+          <li>Ціна за одиницю: <strong>800 грн</strong></li>
+          <li>Середні продажі: <strong>1,000 шт/місяць</strong></li>
+          <li>Річний дохід: <strong>9,600,000 грн</strong></li>
+        </ul>
+        <div id="incomeChart" class="chart-container"></div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <h4>Прибуток до податків: <span id="profitBeforeTax" class="text-primary">542,000 грн</span></h4>
+      <h4>Прибуток після податків: <span id="profitAfterTax" class="text-primary">436,000 грн</span></h4>
+      <h4>Точка беззбитковості: <span id="breakEvenPoint" class="text-primary">96 шт/місяць</span></h4>
+    </div>
+  </div>
+</section>
